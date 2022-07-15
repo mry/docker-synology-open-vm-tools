@@ -1,6 +1,6 @@
-# docker-xpenology-open-vm-tools
+# docker-synology-open-vm-tools
 
-This Docker container allows you to run open-vm-tools on a Xpenology DSM running on VMware ESXi.
+This Docker container allows you to run open-vm-tools on a Synology DSM running on VMware ESXi.
 
 * Supports Shutdown/Restart
 * Returns DSM networking information to the VMware ESXi host
@@ -18,5 +18,5 @@ SSH into your DSM and run this command.
 
 ```
 sudo mkdir /root/.ssh
-sudo docker run -d --restart=always --net=host -v /root/.ssh/:/root/.ssh/ --name open-vm-tools emryl/docker-xpenology-open-vm-tools
+sudo docker run -d --restart=always --net=host -v /root/.ssh/:/root/.ssh/ --name open-vm-tools emryl/docker-synology-open-vm-tools
 ```

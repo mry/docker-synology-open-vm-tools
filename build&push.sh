@@ -5,13 +5,13 @@ then
 	exit 1
 fi
 
-echo "Building emryl/docker-xpenology-open-vm-tools:$1 docker image"
+echo "Building emryl/docker-synology-open-vm-tools:$1 docker image"
 
 read -r -p "Are you sure to run this script ? [Y/n] " answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-	docker build --no-cache --pull -t emryl/docker-xpenology-open-vm-tools:$1 .
-	docker push emryl/docker-xpenology-open-vm-tools:$1
-	echo "Successfully pushed emryl/docker-xpenology-open-vm-tools:$1"
+	docker build --no-cache --pull -t emryl/docker-synology-open-vm-tools:$1 .
+	docker push emryl/docker-synology-open-vm-tools:$1
+	echo "Successfully pushed emryl/docker-synology-open-vm-tools:$1"
 	exit 0
 else
 	echo "Abort"
