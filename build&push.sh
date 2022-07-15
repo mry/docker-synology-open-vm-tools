@@ -9,7 +9,7 @@ echo "Building emryl/docker-synology-open-vm-tools:$1 docker image"
 
 read -r -p "Build Dockerfile ? [y/N] " answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-	docker build --no-cache --pull -t emryl/docker-synology-open-vm-tools:$1 .
+	docker build --no-cache --pull -t emryl/docker-synology-open-vm-tools:$1 -t emryl/docker-synology-open-vm-tools:latest .
 	#docker push emryl/docker-synology-open-vm-tools:$1
 	echo "Successfully built emryl/docker-synology-open-vm-tools:$1"
 else
@@ -26,8 +26,8 @@ fi
 
 read -r -p "Push to DockerHub ? [y/N] " answer
 if [ "$answer" != "${answer#[Yy]}" ] ;then
-	docker push emryl/docker-synology-open-vm-tools:$1
-	echo "Successfully pushed emryl/docker-synology-open-vm-tools:$1"
+	docker push emryl/docker-synology-open-vm-tools --all-tags
+	echo "Successfully pushed emryl/docker-synology-open-vm-tools all tags"
 else
 	echo "Finished without pushing to DockerHub"
 fi
